@@ -1,0 +1,20 @@
+# Paths below point to the existing fitting project; no files there are changed.
+Backend: CTEQDisPac
+Orders: [NLO, NNLO]      # alternatively: Order: NLO or Order: NNLO
+Output: ../grid/hera
+WorkDirectory: ../.tmp/production/hera.work
+XNodes: 80
+Threads: 8
+Masses: {Charm: 1.3, Bottom: 4.75, Top: 1.0e99}
+Integration: {RelativeTolerance: 1.0e-4, MaxDepth: 8}
+Envelope: {SmallXPower: -0.3, LargeXPower: 1.0}
+AllowNLOChargedCurrent: true  # source CC is NLO even in an NNLO dataset
+DataPath: /Data4/pyridineking/GlobalFitting/newglobalfitting/share/datasets
+Datasets:
+  - /Data4/pyridineking/GlobalFitting/newglobalfitting/share/DefaultConfigs/HeraIplusII.yaml
+  - /Data4/pyridineking/GlobalFitting/newglobalfitting/share/DefaultConfigs/HeraCombinedCharm.yaml
+Validation:
+  PDF: CT18NNLO
+  Member: 0
+  RelativeTolerance: 0.001
+  AbsoluteTolerance: 1.0e-8
